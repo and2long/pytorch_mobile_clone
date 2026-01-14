@@ -3,10 +3,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
-
-import 'package:pytorch_mobile/pytorch_mobile.dart';
-import 'package:pytorch_mobile/model.dart';
 import 'package:pytorch_mobile/enums/dtype.dart';
+import 'package:pytorch_mobile/model.dart';
+import 'package:pytorch_mobile/pytorch_mobile.dart';
 
 void main() => runApp(MyApp());
 
@@ -44,7 +43,7 @@ class _MyAppState extends State<MyApp> {
   //run an image model
   Future runImageModel() async {
     //pick a random image
-    final PickedFile? image = await _picker.getImage(
+    final XFile? image = await _picker.pickImage(
         source: (Platform.isIOS ? ImageSource.gallery : ImageSource.camera),
         maxHeight: 224,
         maxWidth: 224);
